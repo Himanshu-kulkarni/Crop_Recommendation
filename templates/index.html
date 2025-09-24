@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Recommendation</title>
+</head>
+<body>
+    <h1>🌾 AI-Based Crop Recommendation 🌾</h1>
+    <form action="/predict" method="post">
+        <label>Location:</label>
+        <input type="text" name="location" placeholder="e.g. Pune" required><br><br>
+
+        <label>Season:</label>
+        <select name="season" required>
+            <option value="Kharif">Kharif</option>
+            <option value="Rabi">Rabi</option>
+            <option value="Summer">Summer</option>
+        </select><br><br>
+
+        <input type="submit" value="Predict Crop">
+    </form>
+
+    {% if prediction %}
+        <h2>Recommended Crop: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
